@@ -35,20 +35,12 @@ class Connection
     /**
      * @throws KauflandNoCredentialsException
      */
-    public function __construct(
-        string $client_key,
-        string $secret_key,
-        Locale $locale = null,
-        Storefront $storefront = null
-    ) {
-        if (! $client_key || ! $secret_key) {
-            throw new KauflandNoCredentialsException('No client_key and/or secret_key is set');
-        }
-
+    public function __construct(string $client_key, string $secret_key, Locale $locale, Storefront $storefront)
+    {
         $this->client_key = $client_key;
         $this->secret_key = $secret_key;
-        $this->locale     = $locale ?? new Locale();
-        $this->storefront = $storefront ?? new Storefront();
+        $this->locale     = $locale;
+        $this->storefront = $storefront;
     }
 
     private function signRequest($method, $uri, $body, $timestamp, $secret_key): string
@@ -76,15 +68,16 @@ class Connection
      */
     public function getClient(): ClientInterface
     {
-        $this->client = $this->client ?? new Client([
-            'base_uri' => self::URL,
-            'headers' => [
-                'Content-Type' => 'application/json',
-                'Accept' => 'application/json',
-                'Shop-Client-Key' => $this->client_key,
-                'User-Agent' => self::USERAGENT
-            ]
-        ]);
+        $this->client = $this->client ??
+            new Client([
+                'base_uri' => self::URL,
+                'headers' => [
+                    'Content-Type' => 'application/json',
+                    'Accept' => 'application/json',
+                    'Shop-Client-Key' => $this->client_key,
+                    'User-Agent' => self::USERAGENT
+                ]
+            ]);
 
         return $this->client;
     }

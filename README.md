@@ -16,16 +16,13 @@ composer require productflowbv/kaufland-php-client
 ## Set-up connection
 Prepare the client for connecting to Kaufland with your client key and secret key.
 ```php
-$kaufland = new \ProductFlow\KauflandPhpClient\Kaufland();
-$kaufland->setClientKey($clientkey);
-$kaufland->setSecretKey($secretkey);
-
-// optional, if locale differs from "de_DE"
-$kaufland->setLocale((new Locale())->set(Locale::CS_CZ));
-// optional, if storefront differs from "de"
-$kaufland->setStorefront((new Storefront())->set(Storefront::CZ));
-// optional, change default client by configured one
-$kaufland->setClient(new Client(...))
+$kaufland = new \ProductFlow\KauflandPhpClient\Kaufland(
+    $clientkey,
+    $secretkey,
+    (new Locale())->set(Locale::CS_CZ),         // optional
+    (new Storefront())->set(Storefront::CZ))    // optional
+    new Client(...)                             // optional
+);
 ```
 
 ## Get all order-units

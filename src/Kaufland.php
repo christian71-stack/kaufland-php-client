@@ -42,59 +42,36 @@ class Kaufland
      */
     protected string $secret_key;
 
+    /**
+     * @var Locale
+     */
     protected Locale $locale;
 
+    /**
+     * @var Storefront
+     */
     protected Storefront $storefront;
 
     /**
      * @var Connection
      */
-    protected $connection;
+    protected ?Connection $connection = null;
 
-    /**
-     * @param string $client_key
-     */
-    public function setClientKey(string $client_key): static
-    {
+    public function __construct(
+        string $client_key,
+        string $secret_key,
+        Locale $locale = null,
+        Storefront $storefront = null,
+        ClientInterface $client = null
+    ) {
         $this->client_key = $client_key;
-
-        return $this;
-    }
-
-    /**
-     * @param string $secret_key
-     */
-    public function setSecretKey(string $secret_key): static
-    {
         $this->secret_key = $secret_key;
+        $this->locale = $locale ?? new Locale();
+        $this->storefront = $storefront ?? new Storefront();
 
-        return $this;
-    }
-
-    public function setLocale(Locale $locale): static
-    {
-        $this->locale = $locale;
-
-        return $this;
-    }
-
-    public function setStorefront(Storefront $storefront): static
-    {
-        $this->storefront = $storefront;
-
-        return $this;
-    }
-
-    /**
-     * @param ClientInterface $client
-     *
-     * @throws KauflandNoCredentialsException
-     */
-    public function setClient(ClientInterface $client): static
-    {
-        $this->getConnection()->setClient($client);
-
-        return $this;
+        if ($client) {
+            $this->getConnection()->setClient($client);
+        }
     }
 
     /**
@@ -103,13 +80,8 @@ class Kaufland
      */
     private function getConnection(): Connection
     {
-        if ($this->connection == null) {
-            $this->connection = new Connection(
-                $this->client_key,
-                $this->secret_key,
-                $this->locale ?? new Locale(),
-                $this->storefront ?? new Storefront()
-            );
+        if (!$this->connection) {
+            $this->connection = new Connection($this->client_key, $this->secret_key, $this->locale, $this->storefront);
         }
         return $this->connection;
     }
