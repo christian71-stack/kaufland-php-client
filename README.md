@@ -38,25 +38,26 @@ $order_lists = $kaufland->orderUnit()->list();
 :x: = Not yet developed<br />
 :heavy_exclamation_mark: = deprecated/not supported <br />
 
-| Endpoint  | Status |
-| ------------- | ------------- |
-| attributes  | :ballot_box_with_check:  |
-| categories  | :white_check_mark:  |
-| import-files  | :ballot_box_with_check:  |
-| items  | :ballot_box_with_check:  |
-| product-data  | :white_check_mark:  |
-| orders  | :white_check_mark:  |
+| Endpoint        | Status                   |
+|-----------------|--------------------------|
+| attributes      | :ballot_box_with_check:  |
+| categories      | :white_check_mark:       |
+| import-files    | :ballot_box_with_check:  |
+| infos           | :white_check_mark:       |
+| items           | :ballot_box_with_check:  |
+| product-data    | :white_check_mark:       |
+| orders          | :white_check_mark:       |
 | order-invoices  | :ballot_box_with_check:  |
-| order-units  | :white_check_mark:  |
-| shipments  | :ballot_box_with_check:  |
-| reports  | :ballot_box_with_check:  |
-| returns  | :ballot_box_with_check:  |
-| return-units  | :ballot_box_with_check:  |
-| shipping-groups  |  :ballot_box_with_check:  |
-| status  | :white_check_mark:  |
-| subscriptions  | :ballot_box_with_check:  |
-| ticket-messages  | :ballot_box_with_check:  |
-| tickets  | :ballot_box_with_check:  |
-| warehouses  | :ballot_box_with_check:  |
-| units  | :white_check_mark:  |
+| order-units     | :white_check_mark:       |
+| shipments       | :ballot_box_with_check:  |
+| reports         | :ballot_box_with_check:  |
+| returns         | :ballot_box_with_check:  |
+| return-units    | :ballot_box_with_check:  |
+| shipping-groups | :ballot_box_with_check:  |
+| status          | :white_check_mark:       |
+| subscriptions   | :ballot_box_with_check:  |
+| ticket-messages | :ballot_box_with_check:  |
+| tickets         | :ballot_box_with_check:  |
+| warehouses      | :ballot_box_with_check:  |
+| units           | :white_check_mark:       |
 
