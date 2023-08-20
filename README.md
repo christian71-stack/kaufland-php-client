@@ -24,6 +24,8 @@ $kaufland->setSecretKey($secretkey);
 $kaufland->setLocale((new Locale())->set(Locale::CS_CZ));
 // optional, if storefront differs from "de"
 $kaufland->setStorefront((new Storefront())->set(Storefront::CZ));
+// optional, change default client by configured one
+$kaufland->setClient(new Client(...))
 ```
 
 ## Get all order-units

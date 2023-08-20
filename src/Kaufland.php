@@ -2,6 +2,8 @@
 
 namespace ProductFlow\KauflandPhpClient;
 
+use GuzzleHttp\ClientInterface;
+use ProductFlow\KauflandPhpClient\Exceptions\KauflandNoCredentialsException;
 use ProductFlow\KauflandPhpClient\Resources\Attribute;
 use ProductFlow\KauflandPhpClient\Resources\Category;
 use ProductFlow\KauflandPhpClient\Resources\ImportFile;
@@ -39,8 +41,6 @@ class Kaufland
      * @var string
      */
     protected string $secret_key;
-
-    protected string $user_agent = 'Kaufland-php-client/V1';
 
     protected Locale $locale;
 
@@ -86,11 +86,13 @@ class Kaufland
     }
 
     /**
-     * @param string $user_agent
+     * @param ClientInterface $client
+     *
+     * @throws KauflandNoCredentialsException
      */
-    public function setUserAgent(string $user_agent): static
+    public function setClient(ClientInterface $client): static
     {
-        $this->user_agent = $user_agent;
+        $this->getConnection()->setClient($client);
 
         return $this;
     }
@@ -105,7 +107,6 @@ class Kaufland
             $this->connection = new Connection(
                 $this->client_key,
                 $this->secret_key,
-                $this->user_agent,
                 $this->locale ?? new Locale(),
                 $this->storefront ?? new Storefront()
             );
