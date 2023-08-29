@@ -105,7 +105,7 @@ class Connection
                 $options['query']
             );
 
-            $query = '?' . http_build_query($options['query'], '', '&');
+            $query = '?' . http_build_query($options['query'], '', '&', PHP_QUERY_RFC3986);
 
             if (! empty($options['body'])) {
                 $body = json_encode($options['body']);
