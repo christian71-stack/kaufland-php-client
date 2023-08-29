@@ -1,7 +1,7 @@
 {
-  "name": "productflowbv/kaufland-php-client",
+  "name": "d3/kaufland-php-client",
   "type": "library",
-  "description": "A PHP Client for the Kaufland/REAL.de API",
+  "description": "A PHP Client for the Kaufland API",
   "keywords": [
     "api",
     "php",
@@ -9,7 +9,7 @@
     "REAL.de",
     "hitmeister"
   ],
-  "homepage": "https://www.productflow.com",
+  "homepage": "https://www.d3data.de",
   "license": "MIT",
   "authors": [
     {
@@ -19,6 +19,10 @@
     {
       "name": "Jordy Elfferich",
       "email": "jordy@productflow.com"
+    },
+    {
+      "name": "Daniel Seifert",
+      "email": "git@daniel-seifert.com"
     }
   ],
   "require": {

@@ -2,6 +2,8 @@
 
 # STILL WORK IN PROGRESS
 
+Fork of the ProductFlows
+
 # kaufland-php-client
 
 An unofficial client for the Kaufland/Real.de API.
@@ -10,7 +12,7 @@ An unofficial client for the Kaufland/Real.de API.
 This project can easily be installed through Composer.
 
 ```
-composer require productflowbv/kaufland-php-client
+composer require d3/kaufland-php-client
 ```
 
 ## Set-up connection
@@ -38,26 +40,28 @@ $order_lists = $kaufland->orderUnit()->list();
 :x: = Not yet developed<br />
 :heavy_exclamation_mark: = deprecated/not supported <br />
 
-| Endpoint        | Status                   |
-|-----------------|--------------------------|
-| attributes      | :ballot_box_with_check:  |
-| categories      | :white_check_mark:       |
-| import-files    | :ballot_box_with_check:  |
-| infos           | :white_check_mark:       |
-| items           | :ballot_box_with_check:  |
-| product-data    | :white_check_mark:       |
-| orders          | :white_check_mark:       |
-| order-invoices  | :ballot_box_with_check:  |
-| order-units     | :white_check_mark:       |
-| shipments       | :ballot_box_with_check:  |
-| reports         | :ballot_box_with_check:  |
-| returns         | :ballot_box_with_check:  |
-| return-units    | :ballot_box_with_check:  |
-| shipping-groups | :ballot_box_with_check:  |
-| status          | :white_check_mark:       |
-| subscriptions   | :ballot_box_with_check:  |
-| ticket-messages | :ballot_box_with_check:  |
-| tickets         | :ballot_box_with_check:  |
-| warehouses      | :ballot_box_with_check:  |
-| units           | :white_check_mark:       |
+| Endpoint                                                                             | Status                   |
+|--------------------------------------------------------------------------------------|--------------------------|
+| [attributes](https://sellerapi.kaufland.com/?page=endpoints#/Attributes)             | :ballot_box_with_check:  |
+| [carriers](https://sellerapi.kaufland.com/?page=endpoints#/Carriers)                 | :x:                      |
+| [categories](https://sellerapi.kaufland.com/?page=endpoints#/Categories)             | :white_check_mark:       |
+| [import-files](https://sellerapi.kaufland.com/?page=endpoints#/Import%20Files)       | :ballot_box_with_check:  |
+| [infos](https://sellerapi.kaufland.com/?page=endpoints#/Info)                        | :white_check_mark:       |
+| items                                                                                | :ballot_box_with_check:  |
+| [product-data](https://sellerapi.kaufland.com/?page=endpoints#/Product%20Data)       | :white_check_mark:       |
+| [orders](https://sellerapi.kaufland.com/?page=endpoints#/Orders)                     | :white_check_mark:       |
+| [order-invoices](https://sellerapi.kaufland.com/?page=endpoints#/Order%20Invoices)   | :ballot_box_with_check:  |
+| [order-units](https://sellerapi.kaufland.com/?page=endpoints#/Order%20Units)         | :white_check_mark:       |
+| [products](https://sellerapi.kaufland.com/?page=endpoints#/Products)                 | :x:                      |
+| [shipments](https://sellerapi.kaufland.com/?page=endpoints#/Shipments)               | :ballot_box_with_check:  |
+| [reports](https://sellerapi.kaufland.com/?page=endpoints#/Reports)                   | :ballot_box_with_check:  |
+| [returns](https://sellerapi.kaufland.com/?page=endpoints#/Returns)                   | :ballot_box_with_check:  |
+| [return-units](https://sellerapi.kaufland.com/?page=endpoints#/Return%20Units)       | :ballot_box_with_check:  |
+| [shipping-groups](https://sellerapi.kaufland.com/?page=endpoints#/Shipping%20Groups) | :ballot_box_with_check:  |
+| [status](https://sellerapi.kaufland.com/?page=endpoints#/Status)                     | :white_check_mark:       |
+| [subscriptions](https://sellerapi.kaufland.com/?page=endpoints#/Subscriptions)       | :ballot_box_with_check:  |
+| ticket-messages                                                                      | :ballot_box_with_check:  |
+| [tickets](https://sellerapi.kaufland.com/?page=endpoints#/Tickets)                   | :ballot_box_with_check:  |
+| [warehouses](https://sellerapi.kaufland.com/?page=endpoints#/Warehouses)             | :ballot_box_with_check:  |
+| [units](https://sellerapi.kaufland.com/?page=endpoints#/Units)                       | :white_check_mark:       |
 
