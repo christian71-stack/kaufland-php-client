@@ -3,7 +3,6 @@
 namespace ProductFlow\KauflandPhpClient;
 
 use GuzzleHttp\ClientInterface;
-use ProductFlow\KauflandPhpClient\Exceptions\KauflandNoCredentialsException;
 use ProductFlow\KauflandPhpClient\Resources\Attribute;
 use ProductFlow\KauflandPhpClient\Resources\Category;
 use ProductFlow\KauflandPhpClient\Resources\ImportFile;
@@ -13,6 +12,7 @@ use ProductFlow\KauflandPhpClient\Resources\Order;
 use ProductFlow\KauflandPhpClient\Resources\OrderInvoice;
 use ProductFlow\KauflandPhpClient\Resources\OrderUnit;
 use ProductFlow\KauflandPhpClient\Resources\ProductData;
+use ProductFlow\KauflandPhpClient\Resources\Products;
 use ProductFlow\KauflandPhpClient\Resources\Report;
 use ProductFlow\KauflandPhpClient\Resources\Returns;
 use ProductFlow\KauflandPhpClient\Resources\ReturnUnit;
@@ -64,7 +64,7 @@ class Kaufland
         Locale $locale = null,
         Storefront $storefront = null,
         ClientInterface $client = null
-    ) {
+    ){
         $this->client_key = $client_key;
         $this->secret_key = $secret_key;
         $this->locale = $locale ?? new Locale();
@@ -139,6 +139,15 @@ class Kaufland
     public function productData()
     {
         return new ProductData($this->getConnection());
+    }
+
+    /**
+     * @return Products
+     * @throws Exceptions\KauflandNoCredentialsException
+     */
+    public function products(): Products
+    {
+        return new Products($this->getConnection());
     }
 
     /**
