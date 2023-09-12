@@ -2,6 +2,7 @@
 
 namespace ProductFlow\KauflandPhpClient;
 
+use Composer\InstalledVersions;
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Exception\GuzzleException;
@@ -16,7 +17,7 @@ class Connection
 {
     public const URL = 'https://sellerapi.kaufland.com/v2/';
 
-    public const USERAGENT = 'Kaufland-php-client/V1';
+    public const USERAGENT = 'Kaufland-php-client';
 
     protected string $client_key;
 
@@ -75,7 +76,7 @@ class Connection
                     'Content-Type' => 'application/json',
                     'Accept' => 'application/json',
                     'Shop-Client-Key' => $this->client_key,
-                    'User-Agent' => self::USERAGENT
+                    'User-Agent' => self::USERAGENT.'/'.InstalledVersions::getVersion('d3/kaufland-php-client')
                 ]
             ]);
 
