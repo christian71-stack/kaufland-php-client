@@ -4,6 +4,7 @@ namespace ProductFlow\KauflandPhpClient;
 
 use GuzzleHttp\ClientInterface;
 use ProductFlow\KauflandPhpClient\Resources\Attribute;
+use ProductFlow\KauflandPhpClient\Resources\Carriers;
 use ProductFlow\KauflandPhpClient\Resources\Category;
 use ProductFlow\KauflandPhpClient\Resources\ImportFile;
 use ProductFlow\KauflandPhpClient\Resources\Info;
@@ -94,6 +95,15 @@ class Kaufland
     public function attribute()
     {
         return new Attribute($this->getConnection());
+    }
+
+    /**
+     * @return Carriers
+     * @throws Exceptions\KauflandNoCredentialsException
+     */
+    public function carriers()
+    {
+        return new Carriers($this->getConnection());
     }
 
     /**
