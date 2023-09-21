@@ -137,7 +137,8 @@ class Connection
 
             throw new KauflandException(
                 'Kaufland error: ' . $e->getResponse()->getBody(),
-                $e->getResponse()->getStatusCode()
+                $e->getResponse()->getStatusCode(),
+                $e
             );
         }
     }
@@ -166,7 +167,12 @@ class Connection
 
             return $result_array;
         } catch (\RuntimeException $e) {
-            throw new KauflandException('Kaufland error: ' . $e->getMessage());
+            throw new KauflandException(
+                'Kaufland error: ' . $e->getMessage(),
+                0,
+                null,
+                $e
+            );
         }
     }
 }
