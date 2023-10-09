@@ -14,7 +14,7 @@ class Warehouse extends Model
      */
     public function list(): array
     {
-        return $this->connection->request('GET', 'warehouses/seller', ['query' => $this->getQuery()]);
+        return $this->connection->request('GET', 'warehouses', ['query' => $this->getQuery()]);
     }
 
     /**
