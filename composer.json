@@ -1,5 +1,5 @@
 {
-  "name": "d3/kaufland-php-client",
+  "name": "christian71-stack/kaufland-php-client",
   "type": "library",
   "description": "A PHP Client for the Kaufland API",
   "keywords": [
