@@ -12,7 +12,7 @@ An unofficial client for the Kaufland/Real.de API.
 This project can easily be installed through Composer.
 
 ```
-composer require d3/kaufland-php-client
+composer require christian71-stack/kaufland-php-client
 ```
 
 ## Set-up connection
