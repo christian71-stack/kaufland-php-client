@@ -76,7 +76,7 @@ class Connection
                     'Content-Type' => 'application/json',
                     'Accept' => 'application/json',
                     'Shop-Client-Key' => $this->client_key,
-                    'User-Agent' => self::USERAGENT.'/'.InstalledVersions::getVersion('d3/kaufland-php-client')
+                    'User-Agent' => self::USERAGENT.'/'.InstalledVersions::getVersion('christian71-stack/kaufland-php-client')
                 ]
             ]);
 
