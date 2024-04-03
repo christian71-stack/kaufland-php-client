@@ -55,4 +55,14 @@ class Unit extends Model
     {
         return $this->connection->request('DELETE', "units/{$identifier}", ['query' => $this->getQuery()]);
     }
+
+    /**
+     * @param array $attributes
+     * @return array
+     * @throws KauflandException
+     */
+    public function bulk(array $attributes): array
+    {
+        return $this->connection->request('POST', "units/bulk", ['body' => $attributes, 'query' => $this->getQuery()]);
+    }
 }
