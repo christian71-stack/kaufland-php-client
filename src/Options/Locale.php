@@ -12,6 +12,10 @@ class Locale
 
     public const SK_SK = 'sk-SK';
 
+    public const PL_PL = 'pl-PL';
+
+    public const AT_AT = 'at_AT';
+
     protected $current;
 
     public function __construct()
@@ -42,7 +46,9 @@ class Locale
             [
                 self::DE_DE,
                 self::CS_CZ,
-                self::SK_SK
+                self::SK_SK,
+                self::PL_PL,
+                self::AT_AT,
             ]
         );
     }

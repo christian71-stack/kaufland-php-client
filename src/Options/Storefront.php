@@ -7,10 +7,11 @@ use ProductFlow\KauflandPhpClient\Exceptions\KauflandException;
 class Storefront
 {
     public const DE = 'de';
-
     public const CZ = 'cz';
+    public const SK = 'sk';
+    public const PL = 'pl';
+    public const AT = 'at';
 
-    public const SK = 'SK';
 
     protected $current;
 
@@ -42,7 +43,9 @@ class Storefront
             [
                 self::DE,
                 self::CZ,
-                self::SK
+                self::SK,
+                self::PL,
+                self::AT,
             ]
         );
     }
