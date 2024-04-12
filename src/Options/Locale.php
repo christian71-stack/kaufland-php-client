@@ -14,7 +14,7 @@ class Locale
 
     public const PL_PL = 'pl-PL';
 
-    public const AT_AT = 'at_AT';
+    public const AT_AT = 'de_AT';
 
     protected $current;
 
